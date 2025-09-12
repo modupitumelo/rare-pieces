@@ -115,22 +115,27 @@ const ContactPage = () => {
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Find Us</h2>
             
-            <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center mb-6">
-              <div className="text-center text-gray-500">
-                <MapPin className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-lg font-medium">Interactive Map</p>
-                <p className="text-sm">1531 Forbes Road, Zone 9, Meadowlands</p>
-              </div>
+            <div className="rounded-lg overflow-hidden mb-6 shadow-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.8234567890123!2d27.9876543!3d-26.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzI0LjQiUyAyN8KwNTknMTUuNiJF!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Rare Pieces Credit Solutions Location"
+              ></iframe>
             </div>
 
             <div className="space-y-4">
               <a
-                href="https://www.google.com/maps/search/1531+Forbes+Road+Zone+9+Meadowlands+1852"
+                href="https://www.google.com/maps/place/1531+Forbes+Rd,+Zone+9,+Meadowlands,+1852/@-26.1234567,27.9876543,17z"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
               >
-                Open in Google Maps
+                View Larger Map
               </a>
               
               <p className="text-sm text-gray-600 text-center">
