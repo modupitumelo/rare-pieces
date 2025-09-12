@@ -5,12 +5,12 @@ export default {
     extend: {
       colors: {
         'brand': {
-          'brown': '#6B4423',
-          'light-brown': '#8B5A3C',
-          'beige': '#D4B896',
-          'cream': '#F5E6D3',
-          'dark-brown': '#4A2C17',
-          'warm-beige': '#E8D5B7',
+          'blue': '#87CEEB',
+          'light-blue': '#B0E0E6',
+          'dark-blue': '#4682B4',
+          'navy': '#2C5282',
+          'cream': '#F8FAFC',
+          'soft-blue': '#E0F2FE',
         }
       }
     },

@@ -82,9 +82,9 @@ const EnquiryPage = () => {
 
           {/* Payment Details */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
-            <div className="bg-brand-dark-brown text-white px-8 py-6">
+            <div className="bg-brand-navy text-white px-8 py-6">
               <div className="flex items-center">
-                <CreditCard className="w-8 h-8 text-brand-beige mr-3" />
+                <CreditCard className="w-8 h-8 text-brand-light-blue mr-3" />
                 <h3 className="text-2xl font-bold">Payment Details</h3>
               </div>
             </div>
@@ -149,8 +149,8 @@ const EnquiryPage = () => {
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Amount to Pay</label>
-                    <div className="bg-brand-cream border border-brand-beige p-3 rounded-lg">
-                      <span className="font-bold text-2xl text-brand-brown">{getSelectedServicePrice()}</span>
+                    <div className="bg-brand-soft-blue border border-brand-blue p-3 rounded-lg">
+                      <span className="font-bold text-2xl text-brand-navy">{getSelectedServicePrice()}</span>
                     </div>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ const EnquiryPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Submit Your Enquiry
@@ -334,7 +334,7 @@ const EnquiryPage = () => {
                   />
                   <label
                     htmlFor="documents"
-                    className="inline-block mt-2 px-4 py-2 bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown rounded-lg cursor-pointer transition-colors"
+                    className="inline-block mt-2 px-4 py-2 bg-brand-blue hover:bg-brand-light-blue text-white rounded-lg cursor-pointer transition-colors"
                   >
                     Choose Files
                   </label>
@@ -351,7 +351,7 @@ const EnquiryPage = () => {
             <div className="pt-6">
               <button
                 type="submit"
-                className="w-full bg-brand-dark-brown hover:bg-brand-brown text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300"
+                className="w-full bg-brand-navy hover:bg-brand-dark-blue text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300"
               >
                 Submit Enquiry & Get Payment Details
               </button>

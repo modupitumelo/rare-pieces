@@ -22,7 +22,7 @@ const Navbar = () => {
   const whatsappUrl = `https://wa.me/27784306215?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <nav className="bg-brand-dark-brown shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -32,9 +32,9 @@ const Navbar = () => {
               alt="Rare Pieces Logo"
               className="h-12 w-12 object-contain"
             />
-            <div className="text-white">
+            <div className="text-brand-navy">
               <span className="font-bold text-xl">RARE PIECES</span>
-              <div className="text-brand-beige text-sm font-medium">Credit Solutions</div>
+              <div className="text-brand-blue text-sm font-medium">Credit Solutions</div>
             </div>
           </Link>
 
@@ -46,8 +46,8 @@ const Navbar = () => {
                 to={item.path}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-300 ${
                   location.pathname === item.path
-                    ? 'text-brand-beige border-b-2 border-brand-beige'
-                    : 'text-white hover:text-brand-beige'
+                    ? 'text-brand-blue border-b-2 border-brand-blue'
+                    : 'text-brand-navy hover:text-brand-blue'
                 }`}
               >
                 {item.name}
@@ -68,7 +68,7 @@ const Navbar = () => {
             </a>
             <a
               href="tel:+27784306215"
-              className="flex items-center space-x-2 bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown px-4 py-2 rounded-lg font-medium transition-colors duration-300"
+              className="flex items-center space-x-2 bg-brand-blue hover:bg-brand-light-blue text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300"
             >
               <Phone size={18} />
               <span>Call Now</span>
@@ -79,7 +79,7 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-brand-beige transition-colors duration-300"
+              className="text-brand-navy hover:text-brand-blue transition-colors duration-300"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -88,7 +88,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 right-0 bg-brand-dark-brown border-t border-brand-brown shadow-lg">
+          <div className="lg:hidden absolute top-20 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <Link
@@ -97,8 +97,8 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
                     location.pathname === item.path
-                      ? 'text-brand-beige'
-                      : 'text-white hover:text-brand-beige'
+                      ? 'text-brand-blue'
+                      : 'text-brand-navy hover:text-brand-blue'
                   }`}
                 >
                   {item.name}
@@ -116,7 +116,7 @@ const Navbar = () => {
                 </a>
                 <a
                   href="tel:+27784306215"
-                  className="flex items-center justify-center space-x-2 bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown px-4 py-3 rounded-lg font-medium transition-colors duration-300"
+                  className="flex items-center justify-center space-x-2 bg-brand-blue hover:bg-brand-light-blue text-white px-4 py-3 rounded-lg font-medium transition-colors duration-300"
                 >
                   <Phone size={18} />
                   <span>Call Now</span>

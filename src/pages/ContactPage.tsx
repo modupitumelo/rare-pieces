@@ -35,7 +35,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Contact Us
@@ -60,7 +60,7 @@ const ContactPage = () => {
                   href={method.action}
                   target={method.action.startsWith('http') ? '_blank' : '_self'}
                   rel={method.action.startsWith('http') ? 'noopener noreferrer' : ''}
-                  className="inline-block w-full bg-brand-dark-brown hover:bg-brand-brown text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+                  className="inline-block w-full bg-brand-navy hover:bg-brand-dark-blue text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
                 >
                   {method.actionLabel}
                 </a>
@@ -180,7 +180,7 @@ const ContactPage = () => {
       </div>
 
       {/* CTA */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             Ready to Get Started?
@@ -200,7 +200,7 @@ const ContactPage = () => {
             </a>
             <a
               href="mailto:info@mzansilifestylemarket.com?subject=Credit Repair Enquiry"
-              className="flex items-center justify-center space-x-3 bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="flex items-center justify-center space-x-3 bg-brand-blue hover:bg-brand-light-blue text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               <Mail size={20} />
               <span>Send Email</span>

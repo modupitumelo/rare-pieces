@@ -65,7 +65,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Our Credit Repair Services
@@ -105,16 +105,16 @@ const ServicesPage = () => {
                 </div>
 
                 {/* Fee */}
-                <div className="bg-brand-cream border border-brand-beige rounded-lg p-4 mb-6">
-                  <p className="text-brand-dark-brown font-semibold">
-                    <span className="text-brand-brown">Fee: </span>
+                <div className="bg-brand-soft-blue border border-brand-blue rounded-lg p-4 mb-6">
+                  <p className="text-brand-navy font-semibold">
+                    <span className="text-brand-dark-blue">Fee: </span>
                     {service.fee}
                   </p>
                 </div>
 
                 <Link
                   to="/enquiry"
-                  className="inline-block w-full bg-brand-dark-brown hover:bg-brand-brown text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+                  className="inline-block w-full bg-brand-navy hover:bg-brand-dark-blue text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
                 >
                   Enquire About This Service
                 </Link>
@@ -125,24 +125,24 @@ const ServicesPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-brand-beige to-brand-warm-beige py-16">
+      <div className="bg-gradient-to-r from-brand-soft-blue to-brand-light-blue py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-brown mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
             Need Help Choosing the Right Service?
           </h2>
-          <p className="text-xl text-brand-brown mb-8">
+          <p className="text-xl text-brand-navy mb-8">
             Contact us for a free consultation and we'll recommend the best solution for your credit situation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="bg-brand-dark-brown hover:bg-brand-brown text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-brand-navy hover:bg-brand-dark-blue text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Contact Us
             </Link>
             <Link
               to="/pricing"
-              className="bg-white hover:bg-brand-cream text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-white hover:bg-brand-cream text-brand-navy px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               View All Pricing
             </Link>

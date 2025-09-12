@@ -34,7 +34,7 @@ const PricingPage = () => {
         "Follow-up support"
       ],
       popular: true,
-      icon: <Star className="w-8 h-8 text-brand-beige" />
+      icon: <Star className="w-8 h-8 text-brand-blue" />
     },
     {
       title: "Debt Review Removal",
@@ -64,7 +64,7 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Transparent Pricing
@@ -79,9 +79,9 @@ const PricingPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${plan.popular ? 'ring-2 ring-brand-beige transform scale-105' : ''}`}>
+            <div key={index} className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${plan.popular ? 'ring-2 ring-brand-blue transform scale-105' : ''}`}>
               {plan.popular && (
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-brand-beige to-brand-warm-beige text-brand-dark-brown text-center py-2 font-semibold">
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-brand-blue to-brand-light-blue text-white text-center py-2 font-semibold">
                   Most Popular
                 </div>
               )}
@@ -114,8 +114,8 @@ const PricingPage = () => {
                   to="/enquiry"
                   className={`block w-full text-center px-6 py-4 rounded-lg font-semibold transition-colors duration-300 ${
                     plan.popular
-                      ? 'bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown'
-                      : 'bg-brand-dark-brown hover:bg-brand-brown text-white'
+                     ? 'bg-brand-blue hover:bg-brand-light-blue text-white'
+                     : 'bg-brand-navy hover:bg-brand-dark-blue text-white'
                   }`}
                 >
                   Get Started
@@ -132,7 +132,7 @@ const PricingPage = () => {
             {additionalServices.map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                 <h3 className="font-semibold text-slate-900 mb-2">{item.service}</h3>
-                <p className="text-2xl font-bold text-brand-light-brown">{item.price}</p>
+                <p className="text-2xl font-bold text-brand-blue">{item.price}</p>
               </div>
             ))}
           </div>
@@ -140,12 +140,12 @@ const PricingPage = () => {
       </div>
 
       {/* Payment Info */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-8 text-center">Payment Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-slate-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-brand-beige">How to Pay</h3>
+              <h3 className="text-xl font-semibold mb-4 text-brand-light-blue">How to Pay</h3>
               <ul className="space-y-3 text-gray-300">
                 <li>• Submit your enquiry form</li>
                 <li>• Receive bank account details</li>
@@ -155,7 +155,7 @@ const PricingPage = () => {
               </ul>
             </div>
             <div className="bg-slate-800 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-brand-beige">What's Included</h3>
+              <h3 className="text-xl font-semibold mb-4 text-brand-light-blue">What's Included</h3>
               <ul className="space-y-3 text-gray-300">
                 <li>• Professional consultation</li>
                 <li>• All legal documentation</li>
@@ -170,24 +170,24 @@ const PricingPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-brand-beige to-brand-warm-beige py-16">
+      <div className="bg-gradient-to-r from-brand-soft-blue to-brand-light-blue py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-brown mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
             Ready to Start Your Credit Repair Journey?
           </h2>
-          <p className="text-xl text-brand-brown mb-8">
+          <p className="text-xl text-brand-navy mb-8">
             Choose the service that's right for you and take the first step towards financial freedom.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/enquiry"
-              className="bg-brand-dark-brown hover:bg-brand-brown text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-brand-navy hover:bg-brand-dark-blue text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Submit Enquiry
             </Link>
             <Link
               to="/contact"
-              className="bg-white hover:bg-brand-cream text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-white hover:bg-brand-cream text-brand-navy px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Contact Us First
             </Link>

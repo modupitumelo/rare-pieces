@@ -36,7 +36,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             About Rare Pieces Credit Solutions
@@ -86,7 +86,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <div className="flex items-center mb-6">
-                <Target className="w-8 h-8 text-brand-light-brown mr-3" />
+                <Target className="w-8 h-8 text-brand-blue mr-3" />
                 <h3 className="text-2xl font-bold text-slate-900">Our Mission</h3>
               </div>
               <p className="text-gray-700 leading-relaxed">
@@ -98,7 +98,7 @@ const AboutPage = () => {
 
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <div className="flex items-center mb-6">
-                <Award className="w-8 h-8 text-brand-beige mr-3" />
+                <Award className="w-8 h-8 text-brand-blue mr-3" />
                 <h3 className="text-2xl font-bold text-slate-900">Our Vision</h3>
               </div>
               <p className="text-gray-700 leading-relaxed">
@@ -136,7 +136,7 @@ const AboutPage = () => {
       </div>
 
       {/* Achievements */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Track Record</h2>
@@ -148,7 +148,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-brand-beige mb-2">
+                <div className="text-4xl sm:text-5xl font-bold text-brand-light-blue mb-2">
                   {achievement.number}
                 </div>
                 <div className="text-gray-300 text-lg">
@@ -191,24 +191,24 @@ const AboutPage = () => {
       </div>
 
       {/* CTA */}
-      <div className="bg-gradient-to-r from-brand-beige to-brand-warm-beige py-16">
+      <div className="bg-gradient-to-r from-brand-soft-blue to-brand-light-blue py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-brown mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
             Ready to Work with Us?
           </h2>
-          <p className="text-xl text-brand-brown mb-8">
+          <p className="text-xl text-brand-navy mb-8">
             Let's discuss how we can help improve your credit situation and secure your financial future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/enquiry"
-              className="bg-brand-dark-brown hover:bg-brand-brown text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-brand-navy hover:bg-brand-dark-blue text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Start Your Enquiry
             </Link>
             <Link
               to="/contact"
-              className="bg-white hover:bg-brand-cream text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-white hover:bg-brand-cream text-brand-navy px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Contact Us
             </Link>

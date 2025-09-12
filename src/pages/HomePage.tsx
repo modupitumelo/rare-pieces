@@ -32,7 +32,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-dark-brown via-brand-brown to-brand-dark-brown text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-brand-navy via-brand-dark-blue to-brand-navy text-white py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -42,14 +42,14 @@ const HomePage = () => {
           />
         </div>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark-brown/80 via-brand-brown/70 to-brand-dark-brown/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/80 via-brand-dark-blue/70 to-brand-navy/80 z-10"></div>
         
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Fix Your Credit,
-                <span className="text-brand-beige block">Secure Your Future</span>
+                <span className="text-brand-light-blue block">Secure Your Future</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Professional credit repair services in South Africa. We help you remove debt reviews, 
@@ -67,7 +67,7 @@ const HomePage = () => {
                 </a>
                 <Link
                   to="/enquiry"
-                  className="flex items-center justify-center space-x-3 bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                  className="flex items-center justify-center space-x-3 bg-brand-blue hover:bg-brand-light-blue text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
                 >
                   <CheckCircle size={20} />
                   <span>Start Your Enquiry</span>
@@ -105,7 +105,7 @@ const HomePage = () => {
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <Link
                   to="/services"
-                  className="text-brand-light-brown hover:text-brand-brown font-medium inline-flex items-center transition-colors duration-300"
+                  className="text-brand-blue hover:text-brand-dark-blue font-medium inline-flex items-center transition-colors duration-300"
                 >
                   Learn More →
                 </Link>
@@ -116,7 +116,7 @@ const HomePage = () => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-block bg-brand-dark-brown hover:bg-brand-brown text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="inline-block bg-brand-navy hover:bg-brand-dark-blue text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               View All Services
             </Link>
@@ -125,7 +125,7 @@ const HomePage = () => {
       </section>
 
       {/* Trust Section */}
-      <section className="py-20 bg-brand-dark-brown text-white">
+      <section className="py-20 bg-brand-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -138,8 +138,8 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8">
-              <div className="bg-brand-beige w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield size={32} className="text-brand-dark-brown" />
+              <div className="bg-brand-light-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield size={32} className="text-brand-navy" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Legal & Professional</h3>
               <p className="text-gray-300">
@@ -171,24 +171,24 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-brand-beige to-brand-warm-beige">
+      <section className="py-20 bg-gradient-to-r from-brand-soft-blue to-brand-light-blue">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-brown mb-6">
             Ready to Fix Your Credit?
           </h2>
-          <p className="text-xl text-brand-brown mb-8">
+          <p className="text-xl text-brand-navy mb-8">
             Take the first step towards financial freedom. Contact us today for a consultation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/enquiry"
-              className="bg-brand-dark-brown hover:bg-brand-brown text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-brand-navy hover:bg-brand-dark-blue text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Start Your Enquiry
             </Link>
             <Link
               to="/pricing"
-              className="bg-white hover:bg-brand-cream text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-white hover:bg-brand-cream text-brand-navy px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               View Pricing
             </Link>

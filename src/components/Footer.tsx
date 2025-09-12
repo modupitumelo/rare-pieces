@@ -6,7 +6,7 @@ const Footer = () => {
   const whatsappUrl = `https://wa.me/27784306215?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <footer className="bg-brand-dark-brown text-white">
+    <footer className="bg-brand-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
@@ -19,7 +19,7 @@ const Footer = () => {
               />
               <div>
                 <div className="font-bold text-xl">RARE PIECES</div>
-                <div className="text-brand-beige text-sm font-medium">Credit Solutions</div>
+                <div className="text-brand-light-blue text-sm font-medium">Credit Solutions</div>
               </div>
             </div>
             <p className="text-gray-300 mb-4">
@@ -32,22 +32,22 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-brand-beige">Contact Information</h3>
+            <h3 className="text-lg font-semibold mb-6 text-brand-light-blue">Contact Information</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Phone size={18} className="text-brand-beige" />
-                <a href="tel:+27784306215" className="hover:text-brand-beige transition-colors">
+                <Phone size={18} className="text-brand-light-blue" />
+                <a href="tel:+27784306215" className="hover:text-brand-light-blue transition-colors">
                   +27 78 430 6215
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail size={18} className="text-brand-beige" />
-                <a href="mailto:info@mzansilifestylemarket.com" className="hover:text-brand-beige transition-colors">
+                <Mail size={18} className="text-brand-light-blue" />
+                <a href="mailto:info@mzansilifestylemarket.com" className="hover:text-brand-light-blue transition-colors">
                   info@mzansilifestylemarket.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin size={18} className="text-brand-beige mt-1" />
+                <MapPin size={18} className="text-brand-light-blue mt-1" />
                 <div>
                   <p>1531 Forbes Road, Zone 9</p>
                   <p>Meadowlands, 1852</p>
@@ -58,7 +58,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-brand-beige">Our Services</h3>
+            <h3 className="text-lg font-semibold mb-6 text-brand-light-blue">Our Services</h3>
             <ul className="space-y-2 text-gray-300">
               <li>Debt Review Removal</li>
               <li>Prescribed Debt Removal</li>
@@ -89,7 +89,7 @@ const Footer = () => {
               </a>
               <a
                 href="mailto:info@mzansilifestylemarket.com?subject=Credit Repair Enquiry"
-                className="flex items-center space-x-2 bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
+                className="flex items-center space-x-2 bg-brand-blue hover:bg-brand-light-blue text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
               >
                 <Mail size={16} />
                 <span>Email</span>

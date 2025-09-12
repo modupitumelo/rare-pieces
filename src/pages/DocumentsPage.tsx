@@ -80,7 +80,7 @@ const DocumentsPage = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Required Documents
@@ -155,7 +155,7 @@ const DocumentsPage = () => {
       </div>
 
       {/* Upload Section */}
-      <div className="bg-brand-dark-brown text-white py-16">
+      <div className="bg-brand-navy text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Submit Your Documents?
@@ -166,13 +166,13 @@ const DocumentsPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/enquiry"
-              className="bg-brand-beige hover:bg-brand-warm-beige text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-brand-blue hover:bg-brand-light-blue text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Submit Enquiry & Upload Documents
             </Link>
             <Link
               to="/contact"
-              className="bg-white hover:bg-brand-cream text-brand-dark-brown px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
+              className="bg-white hover:bg-brand-cream text-brand-navy px-8 py-4 rounded-lg font-semibold transition-colors duration-300"
             >
               Contact Us First
             </Link>
