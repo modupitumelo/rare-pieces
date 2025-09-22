@@ -27,7 +27,8 @@ const ContactPage = () => {
       title: "Email",
       description: "Send us an email",
       value: "info@mzansilifestylemarket.com",
-      action: "mailto:info@mzansilifestylemarket.com?subject=Credit Repair Enquiry",
+      value: "info@rarepieces.co.za",
+      action: "mailto:info@rarepieces.co.za?subject=Credit Repair Enquiry",
       actionLabel: "Send Email"
     }
   ];
@@ -117,7 +118,7 @@ const ContactPage = () => {
             
             <div className="rounded-lg overflow-hidden mb-6 shadow-md">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.8234567890123!2d27.9876543!3d-26.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzI0LjQiUyAyN8KwNTknMTUuNiJF!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.234567890123!2d27.9123456!3d-26.2345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c123456789a%3A0x123456789abcdef0!2s1531%20Forbes%20Rd%2C%20Zone%209%2C%20Meadowlands%2C%201852!5e0!3m2!1sen!2sza!4v1640995200000!5m2!1sen!2sza"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
@@ -130,7 +131,7 @@ const ContactPage = () => {
 
             <div className="space-y-4">
               <a
-                href="https://www.google.com/maps/place/1531+Forbes+Rd,+Zone+9,+Meadowlands,+1852/@-26.1234567,27.9876543,17z"
+                href="mailto:info@rarepieces.co.za?subject=Credit Repair Enquiry"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors duration-300"

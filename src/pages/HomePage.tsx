@@ -76,7 +76,7 @@ const HomePage = () => {
             </div>
             <div className="relative">
               <img 
-                src="/public/credit-clear.jpg"
+                src="/credit-clear.jpg"
                 alt="Rare Pieces Credit Solutions"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />

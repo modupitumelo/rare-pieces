@@ -190,7 +190,7 @@ const EnquiryPage = () => {
             </div>
 
             <div className="mt-6 text-sm text-gray-600">
-              <p>Or email proof of payment to: <a href="mailto:info@mzansilifestylemarket.com" className="text-blue-600 hover:underline">info@mzansilifestylemarket.com</a></p>
+              <p>Or email proof of payment to: <a href="mailto:info@rarepieces.co.za" className="text-blue-600 hover:underline">info@rarepieces.co.za</a></p>
             </div>
           </div>
         </div>

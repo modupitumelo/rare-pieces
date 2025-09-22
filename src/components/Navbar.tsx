@@ -25,17 +25,13 @@ const Navbar = () => {
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          {/* Logo Only */}
+          <Link to="/" className="flex items-center">
             <img 
-              src="/public/WhatsApp Image 2025-09-11 at 16.53.17_ba6a0cac.jpg" 
-              alt="Rare Pieces Logo"
-              className="h-12 w-12 object-contain"
-            />
-            <div className="text-brand-navy">
-              <span className="font-bold text-xl">RARE PIECES</span>
-              <div className="text-brand-blue text-sm font-medium">Credit Solutions</div>
-            </div>
+  src="/logo.png" 
+  alt="Rare Pieces Logo"
+  className="h-14 w-auto object-contain"
+/>
           </Link>
 
           {/* Desktop Navigation */}

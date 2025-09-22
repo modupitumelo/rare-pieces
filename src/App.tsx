@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import PricingPage from './pages/PricingPage';
@@ -40,6 +41,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <Chatbot />
       </div>
     </Router>
   );
