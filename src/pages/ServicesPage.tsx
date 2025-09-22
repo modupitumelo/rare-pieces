@@ -32,7 +32,7 @@ const ServicesPage = () => {
       title: "Adverse Accounts / Credit Score Fix",
       description: "Improve your credit score by removing negative listings and adverse account information.",
       details: "Clean up your credit report by removing incorrect adverse listings, disputed accounts, and improving your overall credit score.",
-      requiredDocs: ["ID Copy", "Proof of Residence", "Credit Report", "Dispute Documentation (if applicable)"],
+      requiredDocs: ["ID Copy", "Proof of Residence", "Credit Report", "Dispute Documentation (if applicable) "],
       fee: "R6,000",
       icon: <TrendingUp className="w-12 h-12 text-green-500" />
     },
