@@ -40,7 +40,7 @@ const ServicesPage = () => {
       title: "Unlawful Fraud Listing Removal",
       description: "Remove fraudulent listings that were placed on your credit record without your knowledge or consent.",
       details: "Combat identity theft and fraudulent credit applications. We help remove unauthorized accounts and restore your credit integrity.",
-      requiredDocs: ["ID Copy", "Proof of Residence", "Affidavit", "Supporting Evidence", "Police Case Number (if applicable)"],
+      requiredDocs: ["ID Copy", "Proof of Residence", "Affidavit", "Supporting Evidence", "Police Case Number"],
       fee: "R8,000",
       icon: <AlertTriangle className="w-12 h-12 text-orange-500" />
     },
