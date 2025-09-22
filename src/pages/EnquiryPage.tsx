@@ -117,17 +117,56 @@ const EnquiryPage = () => {
               <ul className="text-left text-green-700 space-y-2">
                 <li className="flex items-center">
                   <CheckCircle size={16} className="text-green-500 mr-2" />
-                  We'll review your enquiry within 24 hours
+                  Make payment using the banking details below
                 </li>
                 <li className="flex items-center">
                   <CheckCircle size={16} className="text-green-500 mr-2" />
-                  You'll receive payment details via email or WhatsApp
+                  Send proof of payment via WhatsApp
                 </li>
                 <li className="flex items-center">
                   <CheckCircle size={16} className="text-green-500 mr-2" />
                   Once payment is confirmed, we'll start your case
                 </li>
               </ul>
+            </div>
+          </div>
+
+          {/* Banking Details */}
+          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-8">
+            <h3 className="text-2xl font-bold text-blue-800 mb-6 text-center">Banking Details for Payment</h3>
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-1">Account Holder</h4>
+                  <p className="text-lg font-bold text-gray-900">S.I. Bopape</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-1">Bank Name</h4>
+                  <p className="text-lg font-bold text-gray-900">Nedbank</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-1">Account Number</h4>
+                  <p className="text-lg font-bold text-gray-900">1224250532</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-1">Branch Code</h4>
+                  <p className="text-lg font-bold text-gray-900">198765</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-1">Account Type</h4>
+                  <p className="text-lg font-bold text-gray-900">Current Account</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-1">Amount to Pay</h4>
+                  <p className="text-lg font-bold text-brand-navy">{getSelectedServicePrice()}</p>
+                </div>
+              </div>
+              
+              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-yellow-800 font-medium">
+                  <strong>Important:</strong> Use your full name "{formData.fullName}" as the payment reference.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -142,9 +181,9 @@ const EnquiryPage = () => {
 
           {/* Contact Options */}
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Need to Contact Us?</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Send Proof of Payment</h3>
             <p className="text-gray-600 mb-6">
-              For immediate assistance or questions about your enquiry, reach out to us directly.
+              After making payment, send your proof of payment via WhatsApp for immediate processing.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
@@ -155,7 +194,7 @@ const EnquiryPage = () => {
                 className="flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
               >
                 <MessageCircle size={20} />
-                <span>WhatsApp Us</span>
+                <span>Send Proof of Payment</span>
               </a>
               <a
                 href="mailto:info@rarepieces.co.za?subject=Enquiry Follow-up"
