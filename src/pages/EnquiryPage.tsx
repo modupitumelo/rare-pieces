@@ -28,7 +28,7 @@ const EnquiryPage = () => {
     bankName: "Nedbank",
     accountNumber: "1224250532",
     branchCode: "198765",
-    accountType: "Cheque Account",
+    accountType: "Current Account",
     accountHolder: "S.I. Bopape"
   };
 
