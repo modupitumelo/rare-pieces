@@ -8,40 +8,45 @@ const ServicesPage = () => {
       title: "Debt Review Removal",
       description: "Professional removal of debt review flags from your credit profile. We handle the entire process legally and efficiently.",
       details: "Remove debt counselling status and restore your ability to apply for credit. Our process involves working with credit bureaus and debt counsellors to clear your record.",
-      requiredDocs: ["ID Copy", "Proof of Residence", "Power of Attorney (if applicable)"],
-      fee: "Single: R8,000 | Married (COP): R16,000",
+      requiredDocs: ["ID Copy", "Proof of residence document not older than 3 months", "Power of Attorney (To be provided by service provider)"],
+      fee: "R8,000 Single Application | R16,000 Dual Application/Married COP",
+      timeline: "Up to 40 Working Days – No Credit Applications to be initiated by Client during this period",
       icon: <Shield className="w-12 h-12 text-blue-500" />
     },
     {
       title: "Prescribed Debt Removal",
       description: "Remove prescribed debts that should no longer appear on your credit record according to South African law.",
       details: "Debts older than 3 years without any payment arrangements made within the 3 year period. We ensure compliance with prescription laws.",
-      requiredDocs: ["ID Copy", "Proof of Residence", "Account Statements"],
+      requiredDocs: ["ID Copy", "Proof of residence document not older than 3 months", "Account Statements"],
       fee: "R6,000",
+      timeline: "Up to 60 Working Days - No Credit Applications to be initiated by Client during this period",
       icon: <FileText className="w-12 h-12 text-purple-500" />
     },
     {
       title: "Judgement Removal",
       description: "Clear court judgements from your credit record through proper legal channels and documentation.",
       details: "Remove satisfied judgements and rescind default judgements. We work with courts and attorneys to clear your record properly.",
-      requiredDocs: ["ID Copy", "Proof of Residence", "Court Documents", "Payment Proof (if applicable)"],
+      requiredDocs: ["ID Copy", "Proof of residence document not older than 3 months", "Court Documents", "Payment Proof (if applicable)"],
       fee: "R8,000",
+      timeline: "Up to 60 Working Days - No Credit Applications to be initiated by Client during this period",
       icon: <Gavel className="w-12 h-12 text-red-500" />
     },
     {
       title: "Adverse Accounts / Credit Score Fix",
       description: "Improve your credit score by removing negative listings and adverse account information.",
       details: "Clean up your credit report by removing incorrect adverse listings, disputed accounts, and improving your overall credit score.",
-      requiredDocs: ["ID Copy", "Proof of Residence", "Credit Report", "Dispute Documentation (if applicable) "],
+      requiredDocs: ["ID Copy", "Proof of residence document not older than 3 months", "Credit Report", "Dispute Documentation (if applicable)"],
       fee: "R6,000",
+      timeline: "Up to 60 Working Days - No Credit Applications to be initiated by Client during this period",
       icon: <TrendingUp className="w-12 h-12 text-green-500" />
     },
     {
       title: "Unlawful Fraud Listing Removal",
       description: "Remove fraudulent listings that were placed on your credit record without your knowledge or consent.",
       details: "Combat identity theft and fraudulent credit applications. We help remove unauthorized accounts and restore your credit integrity.",
-      requiredDocs: ["ID Copy", "Proof of Residence", "Affidavit", "Supporting Evidence", "Police Case Number"],
+      requiredDocs: ["ID Copy", "Proof of residence document not older than 3 months", "Affidavit", "Supporting Evidence", "Police Case Number (if applicable)"],
       fee: "R8,000",
+      timeline: "Up to 60 Working Days - No Credit Applications to be initiated by Client during this period",
       icon: <AlertTriangle className="w-12 h-12 text-orange-500" />
     },
     {
@@ -50,14 +55,16 @@ const ServicesPage = () => {
       details: "Get detailed insights into your credit status with professional analysis and step-by-step improvement recommendations.",
       requiredDocs: ["ID Copy", "Consent Form"],
       fee: "R500",
+      timeline: "Within 24 hours",
       icon: <CreditCard className="w-12 h-12 text-indigo-500" />
     },
     {
       title: "Bank Loans (Quick Approval)",
       description: "Professional assistance with loan applications and improving your chances of approval.",
       details: "We help prepare your application and work with partner banks to increase your approval chances for personal and business loans.",
-      requiredDocs: ["ID Copy", "Proof of Income", "Bank Statements", "Proof of Residence"],
+      requiredDocs: ["ID Copy", "Proof of Income", "Bank Statements", "Proof of residence document not older than 3 months"],
       fee: "Contact for Quote",
+      timeline: "Circumstantial - No Credit Applications to be initiated by Client during this period",
       icon: <Banknote className="w-12 h-12 text-teal-500" />
     }
   ];
@@ -112,6 +119,14 @@ const ServicesPage = () => {
                   </p>
                 </div>
 
+                {/* Timeline */}
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+                  <p className="text-gray-700">
+                    <span className="font-semibold text-gray-900">Service Timeline: </span>
+                    {service.timeline}
+                  </p>
+                </div>
+
                 <Link
                   to="/enquiry"
                   className="inline-block w-full bg-brand-navy hover:bg-brand-dark-blue text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
@@ -121,6 +136,23 @@ const ServicesPage = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Disclaimer Section */}
+      <div className="bg-red-50 border border-red-200 py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-red-800 mb-6 text-center">
+            Important Disclaimer - No Refund Policy
+          </h2>
+          <div className="bg-white rounded-lg p-6 shadow-md">
+            <p className="text-gray-700 leading-relaxed">
+              Due to payments made to relevant service providers in relation to Rare Pieces of the Essence's credit 
+              repair services, all fees paid are non-refundable. By engaging with our service, clients acknowledge 
+              and accept that no refunds will be provided under any circumstances once the service is initiated. 
+              Clients are encouraged to review all terms and conditions before proceeding with any services.
+            </p>
+          </div>
         </div>
       </div>
 

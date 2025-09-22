@@ -25,11 +25,11 @@ const EnquiryPage = () => {
   ];
 
   const bankDetails = {
-    bankName: "First National Bank (FNB)",
-    accountNumber: "1234567890",
-    branchCode: "250655",
-    accountType: "Business Cheque Account",
-    accountHolder: "Rare Pieces Credit Solutions"
+    bankName: "Nedbank",
+    accountNumber: "1224250532",
+    branchCode: "198765",
+    accountType: "Cheque Account",
+    accountHolder: "S.I. Bopape"
   };
 
   const handleInputChange = (e) => {

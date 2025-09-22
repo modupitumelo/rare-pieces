@@ -1,12 +1,79 @@
 import React from 'react';
-import { MessageCircle, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { MessageCircle, Mail, MapPin, Phone, Send, Shield, FileText } from 'lucide-react';
+
+const PrivacyModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="bg-brand-navy text-white p-6 rounded-t-2xl">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <Shield className="w-8 h-8 text-brand-light-blue mr-3" />
+              <h2 className="text-2xl font-bold">Privacy & Data Use Statement</h2>
+            </div>
+            <button
+              onClick={onClose}
+              className="text-white hover:text-gray-300 text-2xl font-bold"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+        
+        <div className="p-8">
+          <div className="prose max-w-none">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Data Collection and Use</h3>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              Rare Pieces of the Essence shall utilise clients' personal information solely for the purposes of credit 
+              repair solutions. Client information will only be shared with relevant third-party service providers 
+              involved in the credit repair process.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Information Protection</h3>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              We will not disclose, sell, or use client information for any other purposes without explicit consent, 
+              except as required by law or regulation. Your personal information is protected and handled with the 
+              utmost care and confidentiality.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Third-Party Sharing</h3>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              Information may be shared with credit bureaus, legal representatives, and other service providers 
+              directly involved in your credit repair process. This sharing is limited to what is necessary to 
+              provide our services effectively.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Your Rights</h3>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              You have the right to request information about how your data is being used and to request corrections 
+              to any inaccurate information. You may also request that we stop processing your information, subject 
+              to legal and contractual obligations.
+            </p>
+            
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-8">
+              <p className="text-blue-800">
+                <strong>Contact Us:</strong> If you have any questions about this privacy statement or how we handle 
+                your personal information, please contact us at info@rarepieces.co.za or +27 78 430 6215.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Footer = () => {
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = React.useState(false);
+  
   const whatsappMessage = "Hi Rare Pieces, I'd like to enquire about your credit repair services.";
   const whatsappUrl = `https://wa.me/27784306215?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <footer className="bg-brand-navy text-white">
+    <>
+      <footer className="bg-brand-navy text-white">
       {/* Newsletter Section */}
       <div className="bg-brand-dark-blue py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
