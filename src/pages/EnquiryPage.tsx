@@ -42,38 +42,10 @@ const EnquiryPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Create FormData object for Formspree submission
-    const formDataToSubmit = new FormData();
-    formDataToSubmit.append('fullName', formData.fullName);
-    formDataToSubmit.append('email', formData.email);
-    formDataToSubmit.append('phone', formData.phone);
-    formDataToSubmit.append('service', getSelectedServiceLabel());
-    formDataToSubmit.append('message', formData.message);
-    if (formData.documents) {
-      formDataToSubmit.append('documents', formData.documents);
-    }
-
-    // Submit to Formspree
-    fetch('https://formspree.io/f/xpwyayak', {
-      method: 'POST',
-      body: formDataToSubmit,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        setIsSubmitted(true);
-        setShowPayment(true);
-      } else {
-        alert('There was an error submitting your form. Please try again or contact us directly.');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('There was an error submitting your form. Please try again or contact us directly.');
-    });
+    // In a real application, you would send this data to your backend
+    console.log('Form submitted:', formData);
+    setIsSubmitted(true);
+    setShowPayment(true);
   };
 
   const getSelectedServiceLabel = () => {
