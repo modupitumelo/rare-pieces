@@ -15,7 +15,7 @@ const ServicesPage = () => {
     {
       title: "Prescribed Debt Removal",
       description: "Remove prescribed debts that should no longer appear on your credit record according to South African law.",
-      details: "Debts older than 3 years without any payment arrangements made within the 3 year period. We ensure compliance with prescription laws",
+      details: "Debts older than 3 years without any payment arrangements made within the 3 year period. We ensure compliance with prescription laws.",
       requiredDocs: ["ID Copy", "Proof of Residence", "Account Statements"],
       fee: "R6,000",
       icon: <FileText className="w-12 h-12 text-purple-500" />
