@@ -3,52 +3,14 @@ import { X } from 'lucide-react';
 
 const NewsletterPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollCount, setScrollCount] = useState(0);
 
   useEffect(() => {
     // Check if popup has already been shown in this session
     const popupShown = sessionStorage.getItem('newsletterPopupShown');
-    if (popupShown) {
-      return;
+    if (!popupShown) {
+      setIsVisible(true);
+      sessionStorage.setItem('newsletterPopupShown', 'true');
     }
-
-    let lastScrollY = window.scrollY;
-    let scrollTimeout = null;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Clear existing timeout
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-
-      // Set a timeout to count this as a scroll event after user stops scrolling
-      scrollTimeout = setTimeout(() => {
-        // Only count if user has scrolled more than 50px from last position
-        if (Math.abs(currentScrollY - lastScrollY) > 50) {
-          setScrollCount(prev => {
-            const newCount = prev + 1;
-            console.log('Scroll count:', newCount); // Debug log
-            if (newCount >= 3) {
-              setIsVisible(true);
-              sessionStorage.setItem('newsletterPopupShown', 'true');
-            }
-            return newCount;
-          });
-          lastScrollY = currentScrollY;
-        }
-      }, 150); // Wait 150ms after user stops scrolling
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-    };
   }, []);
 
   const closePopup = () => {
