@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import NewsletterPopup from './components/NewsletterPopup';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import PricingPage from './pages/PricingPage';
@@ -42,6 +43,7 @@ function App() {
         </main>
         <Footer />
         <Chatbot />
+        <NewsletterPopup />
       </div>
     </Router>
   );

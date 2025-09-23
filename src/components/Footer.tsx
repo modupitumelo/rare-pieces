@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Mail, MapPin, Phone, Send, Shield, FileText } from 'lucide-react';
+import { MessageCircle, Mail, MapPin, Phone, Shield, FileText } from 'lucide-react';
 
 const PrivacyModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -74,63 +74,6 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-brand-navy text-white">
-      {/* Newsletter Section */}
-      <div className="bg-brand-dark-blue py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Stay Updated on Credit Repair Tips
-            </h3>
-            <p className="text-brand-light-blue mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for expert credit repair advice, industry updates, 
-              and exclusive tips to improve your financial health.
-            </p>
-            
-            {/* Newsletter Form */}
-            <div className="max-w-md mx-auto">
-              <div id="mc_embed_signup">
-                <form 
-                  action="https://rarepieces.us22.list-manage.com/subscribe/post?u=67405654fa0e67bf8999d1191&amp;id=07e94357fd" 
-                  method="post" 
-                  id="mc-embedded-subscribe-form" 
-                  name="mc-embedded-subscribe-form" 
-                  className="validate flex flex-col sm:flex-row gap-3"
-                  target="_blank" 
-                  noValidate
-                >
-                  <div id="mc_embed_signup_scroll" className="flex-1">
-                    <input 
-                      type="email" 
-                      name="EMAIL" 
-                      id="mce-EMAIL" 
-                      placeholder="Enter your email address"
-                      required
-                      className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-light-blue"
-                    />
-                    <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
-                      <input type="text" name="b_67405654fa0e67bf8999d1191_07e94357fd" tabIndex={-1} defaultValue="" />
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    name="subscribe"
-                    id="mc-embedded-subscribe"
-                    className="flex items-center justify-center space-x-2 bg-brand-light-blue hover:bg-white text-brand-navy px-6 py-3 rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap"
-                  >
-                    <Send size={18} />
-                    <span>Subscribe</span>
-                  </button>
-                </form>
-              </div>
-              
-              <p className="text-sm text-brand-light-blue mt-4">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
