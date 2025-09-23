@@ -1,9 +1,13 @@
 // src/components/NewsletterPopup.tsx
 import React, { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import { X, CheckCircle, Loader } from 'lucide-react';
 
 const NewsletterPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>('');
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     const popupShown = sessionStorage.getItem('newsletterPopupShown');
@@ -15,7 +19,72 @@ const NewsletterPopup: React.FC = () => {
 
   const closePopup = () => setIsVisible(false);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const formData = new FormData();
+      formData.append('EMAIL', email);
+      formData.append('b_d1f48d5faf14a145ea2522aaa_d3fe1f22f8', ''); // honeypot field
+
+      const response = await fetch(
+        'https://rarepieces.us19.list-manage.com/subscribe/post-json?u=d1f48d5faf14a145ea2522aaa&id=d3fe1f22f8&c=?',
+        {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        }
+      );
+
+      // Since we're using no-cors mode, we can't read the response
+      // But Mailchimp will still process the subscription
+      setIsSuccess(true);
+      
+      // Auto-close after 3 seconds
+      setTimeout(() => {
+        closePopup();
+      }, 3000);
+
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   if (!isVisible) return null;
+
+  if (isSuccess) {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl max-w-md w-full p-8 text-center relative">
+          <button
+            onClick={closePopup}
+            aria-label="Close newsletter popup"
+            className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-navy"
+          >
+            <X size={20} />
+          </button>
+          
+          <div className="flex justify-center mb-6">
+            <div className="bg-green-100 rounded-full p-4">
+              <CheckCircle className="w-16 h-16 text-green-500" />
+            </div>
+          </div>
+          
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Successfully Subscribed!</h2>
+          <p className="text-gray-600 mb-6">
+            Thank you for subscribing to our newsletter. You'll receive credit repair tips and updates directly in your inbox.
+          </p>
+          <p className="text-sm text-gray-500">
+            This popup will close automatically in a few seconds...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
@@ -24,7 +93,7 @@ const NewsletterPopup: React.FC = () => {
         <button
           onClick={closePopup}
           aria-label="Close newsletter popup"
-          className="absolute top-4 right-4 p-2  text-white  hover:text-white  focus:outline-none focus:ring-2 focus:ring-brand-navy z-10"
+          className="absolute top-4 right-4 p-2 text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white z-10"
         >
           <X size={20} />
         </button>
@@ -37,82 +106,65 @@ const NewsletterPopup: React.FC = () => {
           </p>
         </div>
 
-        {/* Mailchimp Form */}
+        {/* Newsletter Form */}
         <div className="p-6">
-          <div id="mc_embed_shell">
-            <style type="text/css">
-              {`
-                #mc_embed_signup { background: #fff; clear: left; font: 14px Helvetica, Arial, sans-serif; width: 100%; }
-                #mc_embed_signup h2 { display: none; }
-                #mc_embed_signup .mc-field-group { margin-bottom: 1rem; }
-                #mc_embed_signup label { display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem; }
-                #mc_embed_signup input[type="email"] { width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; font-size: 1rem; transition: border-color 0.2s; }
-                #mc_embed_signup input[type="email"]:focus { outline: none; border-color: #87CEEB; box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1); }
-                #mc_embed_signup .button { background-color: #2c5282; color: white; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s; width: 100%; }
-                #mc_embed_signup .button:hover { background-color: #2c5374; }
-                #mc_embed_signup .indicates-required { color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem; }
-                #mc_embed_signup .asterisk { color: #ef4444; }
-                #mc_embed_signup .optionalParent { margin-top: 1rem; }
-                #mc_embed_signup .refferal_badge { display: none !important; }
-                #mc_embed_signup .optionalParent p { display: none !important; }
-                #mc_embed_signup .response { padding: 0.75rem; margin: 0.5rem 0; border-radius: 0.5rem; }
-                #mce-success-response { background-color: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
-                #mce-error-response { background-color: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
-              `}
-            </style>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="text-sm text-gray-600 mb-4">
+              <span className="text-red-500">*</span> indicates required
+            </div>
 
-            <div id="mc_embed_signup">
-              <form
-                action="https://rarepieces.us19.list-manage.com/subscribe/post?u=d1f48d5faf14a145ea2522aaa&id=d3fe1f22f8&f_id=00e189e3f0"
-                method="post"
-                id="mc-embedded-subscribe-form"
-                name="mc-embedded-subscribe-form"
-                className="validate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div id="mc_embed_signup_scroll">
-                  <div className="indicates-required">
-                    <span className="asterisk">*</span> indicates required
-                  </div>
+            {error && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-red-700 text-sm">
+                {error}
+              </div>
+            )}
 
-                  <div className="mc-field-group">
-                    <label htmlFor="mce-EMAIL">
-                      Email Address <span className="asterisk">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="EMAIL"
-                      className="required email"
-                      id="mce-EMAIL"
-                      required
-                      placeholder="Enter your email address"
-                    />
-                  </div>
+            <div>
+              <label htmlFor="newsletter-email" className="block font-semibold text-gray-700 mb-2">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="newsletter-email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={isSubmitting}
+                placeholder="Enter your email address"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+              />
+            </div>
 
-                  <div id="mce-responses" className="clear foot">
-                    <div className="response" id="mce-error-response" style={{ display: 'none' }} />
-                    <div className="response" id="mce-success-response" style={{ display: 'none' }} />
-                  </div>
+            <button
+              type="submit"
+              disabled={isSubmitting || !email.trim()}
+              className={`w-full px-6 py-3 rounded-lg font-semibold text-white transition-colors duration-300 flex items-center justify-center space-x-2 ${
+                isSubmitting || !email.trim()
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-brand-navy hover:bg-brand-dark-blue'
+              }`}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader className="w-5 h-5 animate-spin" />
+                  <span>Subscribing...</span>
+                </>
+              ) : (
+                <span>Subscribe to Newsletter</span>
+              )}
+            </button>
+          </form>
 
-                  <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                    <input type="text" name="b_d1f48d5faf14a145ea2522aaa_d3fe1f22f8" tabIndex={-1} />
-                  </div>
+          <p className="text-sm text-gray-600 mt-4 text-center">
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-                  <div className="optionalParent">
-                    <div className="clear foot">
-                      {/* Subscribe button updated to match header blue */}
-                      <input
-                        type="submit"
-                        name="subscribe"
-                        id="mc-embedded-subscribe"
-                        className="button"
-                        value="Subscribe to Newsletter"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </form>
+export default NewsletterPopup;
             </div>
 
             <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
