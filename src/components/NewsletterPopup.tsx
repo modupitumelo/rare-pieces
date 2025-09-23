@@ -6,7 +6,6 @@ const NewsletterPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    // Show immediately unless shown this session
     const popupShown = sessionStorage.getItem('newsletterPopupShown');
     if (!popupShown) {
       setIsVisible(true);
@@ -14,9 +13,7 @@ const NewsletterPopup: React.FC = () => {
     }
   }, []);
 
-  const closePopup = () => {
-    setIsVisible(false);
-  };
+  const closePopup = () => setIsVisible(false);
 
   if (!isVisible) return null;
 
@@ -27,9 +24,9 @@ const NewsletterPopup: React.FC = () => {
         <button
           onClick={closePopup}
           aria-label="Close newsletter popup"
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10"
+          className="absolute top-4 right-4 p-2  text-white  hover:text-white  focus:outline-none focus:ring-2 focus:ring-brand-navy z-10"
         >
-          <X size={24} />
+          <X size={20} />
         </button>
 
         {/* Header */}
@@ -51,8 +48,8 @@ const NewsletterPopup: React.FC = () => {
                 #mc_embed_signup label { display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem; }
                 #mc_embed_signup input[type="email"] { width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; font-size: 1rem; transition: border-color 0.2s; }
                 #mc_embed_signup input[type="email"]:focus { outline: none; border-color: #87CEEB; box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1); }
-                #mc_embed_signup .button { background-color: #2C5282; color: white; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s; width: 100%; }
-                #mc_embed_signup .button:hover { background-color: #4682B4; }
+                #mc_embed_signup .button { background-color: #2c5282; color: white; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s; width: 100%; }
+                #mc_embed_signup .button:hover { background-color: #2c5374; }
                 #mc_embed_signup .indicates-required { color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem; }
                 #mc_embed_signup .asterisk { color: #ef4444; }
                 #mc_embed_signup .optionalParent { margin-top: 1rem; }
@@ -66,7 +63,7 @@ const NewsletterPopup: React.FC = () => {
 
             <div id="mc_embed_signup">
               <form
-                action="https://app.us14.list-manage.com/subscribe/post?u=67405654fa0e67bf8999d1191&id=72f590dc37&f_id=006cb6e5f0"
+                action="https://rarepieces.us19.list-manage.com/subscribe/post?u=d1f48d5faf14a145ea2522aaa&id=d3fe1f22f8&f_id=00e189e3f0"
                 method="post"
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
@@ -99,11 +96,12 @@ const NewsletterPopup: React.FC = () => {
                   </div>
 
                   <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-                    <input type="text" name="b_67405654fa0e67bf8999d1191_72f590dc37" tabIndex={-1} />
+                    <input type="text" name="b_d1f48d5faf14a145ea2522aaa_d3fe1f22f8" tabIndex={-1} />
                   </div>
 
                   <div className="optionalParent">
                     <div className="clear foot">
+                      {/* Subscribe button updated to match header blue */}
                       <input
                         type="submit"
                         name="subscribe"
@@ -116,6 +114,8 @@ const NewsletterPopup: React.FC = () => {
                 </div>
               </form>
             </div>
+
+            <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
           </div>
 
           <p className="text-sm text-gray-600 mt-4 text-center">
