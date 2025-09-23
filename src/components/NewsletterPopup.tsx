@@ -4,57 +4,58 @@ import { X } from 'lucide-react';
 const NewsletterPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollCount, setScrollCount] = useState(0);
-  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
     // Check if popup has already been shown in this session
     const popupShown = sessionStorage.getItem('newsletterPopupShown');
     if (popupShown) {
-      setHasShown(true);
       return;
     }
 
     let lastScrollY = window.scrollY;
-    let scrollDirection = '';
+    let scrollTimeout = null;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Determine scroll direction
-      if (currentScrollY > lastScrollY) {
-        scrollDirection = 'down';
-      } else if (currentScrollY < lastScrollY) {
-        scrollDirection = 'up';
+      // Clear existing timeout
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
       }
-      
-      // Only count significant scroll movements (more than 100px)
-      if (Math.abs(currentScrollY - lastScrollY) > 100 && !hasShown) {
-        setScrollCount(prev => {
-          const newCount = prev + 1;
-          if (newCount >= 3) {
-            setIsVisible(true);
-            setHasShown(true);
-            sessionStorage.setItem('newsletterPopupShown', 'true');
-          }
-          return newCount;
-        });
-      }
-      
-      lastScrollY = currentScrollY;
+
+      // Set a timeout to count this as a scroll event after user stops scrolling
+      scrollTimeout = setTimeout(() => {
+        // Only count if user has scrolled more than 50px from last position
+        if (Math.abs(currentScrollY - lastScrollY) > 50) {
+          setScrollCount(prev => {
+            const newCount = prev + 1;
+            console.log('Scroll count:', newCount); // Debug log
+            if (newCount >= 3) {
+              setIsVisible(true);
+              sessionStorage.setItem('newsletterPopupShown', 'true');
+            }
+            return newCount;
+          });
+          lastScrollY = currentScrollY;
+        }
+      }, 150); // Wait 150ms after user stops scrolling
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
     };
-  }, [hasShown]);
+  }, []);
 
   const closePopup = () => {
     setIsVisible(false);
   };
 
-  if (!isVisible || hasShown) return null;
+  if (!isVisible) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
